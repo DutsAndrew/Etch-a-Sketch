@@ -1,21 +1,6 @@
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.grid {
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: auto;
-    flex: auto;
-    color: purple;
+.cell {
+    border: 1px solid black;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;
 }
