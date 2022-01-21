@@ -31,3 +31,17 @@ function columnBuilder(cellNumber) {
         };
     };
 };
+
+// eventListeners to catch when mouse interacts with the cells
+container.addEventListener("mouseover", mouseIn, false);
+container.addEventListener("mouseout", mouseOut, false);
+
+// mouseIn function to occur when mouse enters a cell
+function mouseIn() {
+    container.setAttribute("style", "background-color: blue", "color: blue;")
+};
+
+// mouseOut function to occur when mouse exits a cell
+function mouseOut() {
+    container.setAttribute("style", "color: blue", "background-color: white;");
+}
