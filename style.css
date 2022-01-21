@@ -1,6 +1,19 @@
+.container {
+    display: flex;
+}
+
 .cell {
     border: 1px solid black;
     min-width: 20px;
     min-height: 20px;
     display: inline-block;
+    margin-right: 2px;
+}
+
+.row {
+    border: 1px solid black;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;
+    margin-right: 2px;
 }

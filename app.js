@@ -1,13 +1,23 @@
+// variables that manipulate the DOM. "getElement" is used here in place of "querySelector" because querySelector deals with static nodelists, nodelists are like arrays but can't do the same things. In addition, since querySelector is static, the size of the array cannot change; whereas, "getElement" is dynamic, which means the array/list can grow according to needs. Since we are running a loop that is constantly adding to the list we need a dynamic list, which means we use getElement instead of querySelector.
+const container = document.getElementById("container");
+// allows access to rows on the grid, now that the function has created them.
+let rows = document.getElementsByClassName("gridRow");
+// allows access to columns on the grid, now that the function has created them.
+let cells = document.getElementsByClassName("cells");
+
+// calls the buildGrid() function to create the grid.
+buildGrid();
+
 // function to hold the grid. Numbers will be used as arguments in following functions for the amount of columns or rows to build.
 function buildGrid() {
-    makeRows(16);
-    makeColumns(16);
+    rowBuilder(16);
+    columnBuilder(16);
 };
 
 // function to build the rows
 function rowBuilder(rowNumber) {
     for(r = 0; r < rowNumber; r++) {
-        let row = document.createElement('div');
+        let row = document.createElement("div");
         container.appendChild(row).className = "gridRow";
     };
 };
@@ -16,15 +26,8 @@ function rowBuilder(rowNumber) {
 function columnBuilder(cellNumber) {
     for(i = 0; i < rows.length; i++) {
         for(c = 0; c < cellNumber; c++) {
-            let newCell = document.createElement('div');
+            let newCell = document.createElement("div");
             rows[c].appendChild(newCell).className = "cell";
         };
     };
 };
-
-// variables that manipulate the DOM
-const container = document.querySelector("#container");
-// allows access to rows on the grid, now that the function has created them.
-let rows = document.querySelector('.gridRow');
-// allows access to columns on the grid, now that the function has created them.
-let cells = document.querySelector('.cells');
