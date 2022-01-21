@@ -1,9 +1,9 @@
 // variables that manipulate the DOM. "getElement" is used here in place of "querySelector" because querySelector deals with static nodelists, nodelists are like arrays but can't do the same things. In addition, since querySelector is static, the size of the array cannot change; whereas, "getElement" is dynamic, which means the array/list can grow according to needs. Since we are running a loop that is constantly adding to the list we need a dynamic list, which means we use getElement instead of querySelector.
 const container = document.getElementById("container");
 // allows access to rows on the grid, now that the function has created them.
-let rows = document.getElementsByClassName("gridRow");
+const rows = document.getElementsByClassName("gridRow");
 // allows access to columns on the grid, now that the function has created them.
-let cells = document.getElementsByClassName("cells");
+const cells = document.getElementsByClassName("cells");
 
 // calls the buildGrid() function to create the grid.
 buildGrid();
@@ -18,6 +18,7 @@ function buildGrid() {
 function rowBuilder(rowNumber) {
     for(r = 0; r < rowNumber; r++) {
         let row = document.createElement("div");
+        row.addEventListener("mouseover", colorIt);
         container.appendChild(row).className = "gridRow";
     };
 };
@@ -27,21 +28,13 @@ function columnBuilder(cellNumber) {
     for(i = 0; i < rows.length; i++) {
         for(c = 0; c < cellNumber; c++) {
             let newCell = document.createElement("div");
+            newCell.addEventListener("mouseover", colorIt)
             rows[c].appendChild(newCell).className = "cell";
         };
     };
 };
 
-// eventListeners to catch when mouse interacts with the cells
-container.addEventListener("mouseover", mouseIn, false);
-container.addEventListener("mouseout", mouseOut, false);
-
-// mouseIn function to occur when mouse enters a cell
-function mouseIn() {
-    container.setAttribute("style", "background-color: blue", "color: blue;")
-};
-
-// mouseOut function to occur when mouse exits a cell
-function mouseOut() {
-    container.setAttribute("style", "color: blue", "background-color: white;");
+// function to color the cells
+function colorIt(e) {
+    e.target.style.backgroundColor = "blue";
 }
