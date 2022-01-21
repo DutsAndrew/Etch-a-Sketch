@@ -35,5 +35,15 @@ function columnBuilder(cellNumber) {
 
 // function to color the cells
 function colorIt(e) {
-    e.target.style.backgroundColor = "blue";
+    e.target.style.backgroundColor = randomColor();
+}
+
+// since colors in code are used by "#0000FF" you can instead create a loop that will iterate through and randomally pick letters and numbers to select a color. [Math.Floor(Math.random())] since Math.random() returns [0, 1] you can use "16777216" for all the possible RGB color variations. But since arrays start at [0] you remove the 6 and replace it with 5 to account for that.
+function randomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16777215)];
+    }
+    return color;
 }
