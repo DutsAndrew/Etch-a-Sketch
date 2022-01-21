@@ -18,7 +18,6 @@ function buildGrid() {
 function rowBuilder(rowNumber) {
     for(r = 0; r < rowNumber; r++) {
         let row = document.createElement("div");
-        row.addEventListener("mouseover", colorIt);
         container.appendChild(row).className = "gridRow";
     };
 };
