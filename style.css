@@ -2,12 +2,29 @@ body {
     background-color: rgb(206, 198, 166);
     display: flex;
     flex-flow: column wrap;
+    flex: auto;
+    flex-shrink: auto;
+    min-height: 100vh;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.content {
+    display: block;
+    margin: auto;
+    width: 800px;
+    height: 800px;
+    background: white;
+    border-radius: 10px;
+    font-size: 0;
+    border-color: cornsilk;
 }
 
 .title {
     border: 2px double black;
     display: flex;
-    flex: auto;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -17,29 +34,53 @@ body {
     font-weight: 800;
 }
 
-.content {
+.btn {
     display: flex;
-    flex-flow: column nowrap;
-    flex: auto;
-    flex-shrink: auto;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    margin-bottom: 10px;
+}
+
+.clicker {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 40px;
+    width: 250px;
+    font-size: 18px;
+    font-weight: lighter;
+    border: 2px solid black;
 }
 
 .container {
-  justify-content: center;
-  align-items: center;
+    display: block;
+    margin: auto;
+    width: 800px;
+    height: 800px;
+    background: white;
+    border-radius: 10px;
+    font-size: 0;
+    border-color: cornsilk;
 }
 
 .cell {
-    display: flex;
-    flex: auto;
-    flex-shrink: auto;
+    display: inline-block;
     justify-content: center;
     align-items: center;
+    width: 5px;
+    height: 5px;
     border: 1px solid black;
-    min-width: 10px;
-    min-height: 10px;
-    max-width: 50px;
-    max-height: 50px;
-    display: inline-block;
-    margin-right: 2px;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: cornsilk;
+    font-size: 18px;
+    margin-top: 30px;
 }

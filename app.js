@@ -81,4 +81,3 @@ function createNewBoard() {
     // calls the buildGrid() function to create the grid.
     buildGrid(gridSize);
 }
-    
