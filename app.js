@@ -1,6 +1,9 @@
 // Auto loads a grid that is 16x16 on page open
 window.onload = () => {
-    buildGrid(16);
+    if(gridSize === 0) {
+        buildGrid(16);
+    }
+    
 }
 
 // variables that manipulate the DOM. "getElement" is used here in place of "querySelector" because querySelector deals with static nodelists, nodelists are like arrays but can't do the same things. In addition, since querySelector is static, the size of the array cannot change; whereas, "getElement" is dynamic, which means the array/list can grow according to needs. Since we are running a loop that is constantly adding to the list we need a dynamic list, which means we use getElement instead of querySelector.
