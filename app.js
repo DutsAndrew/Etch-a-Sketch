@@ -4,14 +4,26 @@ const container = document.getElementById("container");
 const rows = document.getElementsByClassName("gridRow");
 // allows access to columns on the grid, now that the function has created them.
 const cells = document.getElementsByClassName("cells");
+// allows access to the clear button in HTML
+const clear = document.getElementById("reset");
+
+// Prompt to retrieve user answer
+let gridSize = prompt("What dimension of boxes do you want to play around with? (Max: 100, Output will take your answer L and return: L x L");
 
 // calls the buildGrid() function to create the grid.
 buildGrid();
 
 // function to hold the grid. Numbers will be used as arguments in following functions for the amount of columns or rows to build.
 function buildGrid() {
-    rowBuilder(16);
-    columnBuilder(16);
+    if (gridSize > 100) {
+        alert("Whoops, your number was a little big there buddy")
+        clearIt();
+    } else if (gridSize < 1) {
+        alert("Why so negative?");
+        clearIt();
+    }
+    rowBuilder(gridSize);
+    columnBuilder(gridSize);
 };
 
 // function to build the rows
@@ -27,7 +39,7 @@ function columnBuilder(cellNumber) {
     for(i = 0; i < rows.length; i++) {
         for(c = 0; c < cellNumber; c++) {
             let newCell = document.createElement("div");
-            newCell.addEventListener("mouseover", colorIt)
+            newCell.addEventListener("mouseover", colorIt);
             rows[c].appendChild(newCell).className = "cell";
         };
     };
@@ -38,12 +50,29 @@ function colorIt(e) {
     e.target.style.backgroundColor = randomColor();
 }
 
-// since colors in code are used by "#0000FF" you can instead create a loop that will iterate through and randomally pick letters and numbers to select a color. [Math.Floor(Math.random())] since Math.random() returns [0, 1] you can use "16777216" for all the possible RGB color variations. But since arrays start at [0] you remove the 6 and replace it with 5 to account for that.
+// since colors in code are used by "#0000FF" you can instead create a loop that will iterate through and randomally pick letters and numbers to select a color. [Math.Floor(Math.random())] since Math.random() returns [0, 1] you can use "16777216" for all the possible RGB color variations. But since arrays start at [0] you remove the 6 and replace it with 5 to account for that. In the for loop, it is not iterating through more than 6 numbers because the color code "#0000FF" does not have more than 6 characters at a time.
 function randomColor() {
     let letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16777215)];
+        color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
 }
+
+// Another simple way to create randomColor() without using a loop.
+// function randomColor()
+// {
+//     var color = '#'+Math.floor(Math.random()*16777215).toString(16);
+//     return color;
+//     //random color will be freshly served
+// }
+
+// Listener to call clearIt()
+clear.addEventListener("click", clearIt);
+
+// Function that will clear the Etch-a-Sketch board by refreshing the browser.
+function clearIt() {
+    window.location.reload();
+}
+    
