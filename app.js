@@ -6,21 +6,17 @@ const rows = document.getElementsByClassName("gridRow");
 const cells = document.getElementsByClassName("cells");
 // allows access to the clear button in HTML
 const clear = document.getElementById("reset");
-
-// Prompt to retrieve user answer
-let gridSize = prompt("What dimension of boxes do you want to play around with? (Max: 100, Output will take your answer L and return: L x L");
-
-// calls the buildGrid() function to create the grid.
-buildGrid();
+// allows access to the newBoard button in HTML
+const newBoard = document.getElementById("newBoard");
 
 // function to hold the grid. Numbers will be used as arguments in following functions for the amount of columns or rows to build.
-function buildGrid() {
+function buildGrid(gridSize) {
     if (gridSize > 100) {
         alert("Whoops, your number was a little big there buddy")
-        clearIt();
+        createNewBoard();
     } else if (gridSize < 1) {
         alert("Why so negative?");
-        clearIt();
+        createNewBoard();
     }
     rowBuilder(gridSize);
     columnBuilder(gridSize);
@@ -71,8 +67,18 @@ function randomColor() {
 // Listener to call clearIt()
 clear.addEventListener("click", clearIt);
 
+// Listener to start board
+newBoard.addEventListener("click", createNewBoard);
+
 // Function that will clear the Etch-a-Sketch board by refreshing the browser.
 function clearIt() {
     window.location.reload();
+}
+
+// function that starts a new board
+function createNewBoard() {
+    let gridSize = prompt("What dimension of boxes do you want to play around with? (Max: 100, Output will take your answer L and return: L x L");
+    // calls the buildGrid() function to create the grid.
+    buildGrid(gridSize);
 }
     

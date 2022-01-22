@@ -1,8 +1,17 @@
-.container {
+body {
+    background-color: rgb(206, 198, 166);
+}
+
+.content {
     display: flex;
     flex-flow: column nowrap;
     flex: auto;
     flex-shrink: auto;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
 }
 
 .cell {
