@@ -1,5 +1,20 @@
 body {
     background-color: rgb(206, 198, 166);
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.title {
+    border: 2px double black;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 800;
 }
 
 .content {
