@@ -4,7 +4,7 @@ window.onload = () => {
 }
 
 // variables that manipulate the DOM. "getElement" is used here in place of "querySelector" because querySelector deals with static nodelists, nodelists are like arrays but can't do the same things. In addition, since querySelector is static, the size of the array cannot change; whereas, "getElement" is dynamic, which means the array/list can grow according to needs. Since we are running a loop that is constantly adding to the list we need a dynamic list, which means we use getElement instead of querySelector.
-const container = document.querySelector(".container");
+const container = document.getElementById("container");
 // allows access to rows on the grid, now that the function has created them.
 const gridRow = document.getElementsByClassName("row");
 // allows access to columns on the grid, now that the function has created them.

@@ -46,7 +46,7 @@ body {
     border: 2px solid white;
 }
 
-.container {
+#container {
      border-style: solid;
     border-color: cornsilk;
     border-radius: 2%;
@@ -55,6 +55,7 @@ body {
     height: 500px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .row {
@@ -64,8 +65,7 @@ body {
 }
 
 .cell {
-    width: 35px;
-    height: 35px;
+    flex: auto;
     border: 1px solid lightgray;
 }
 
