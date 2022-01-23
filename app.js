@@ -28,6 +28,11 @@ function buildGrid(gridSize) {
 
 // function to build the rows and cells
 function rowAndCellBuilder(gridSize) {
+    // clears the rows and cells from the DOM, so that container is left empty.
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
     for(r = 0; r < gridSize; r++) {
         let gridRow = document.createElement("div");
         gridRow.classList.add("row");
