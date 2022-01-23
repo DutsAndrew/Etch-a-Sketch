@@ -23,11 +23,11 @@ function buildGrid(gridSize) {
         alert("Why so negative?");
         createNewBoard();
     }
-    cellBuilder(gridSize);
+    rowAndCellBuilder(gridSize);
 };
 
-// function to build the rows
-function cellBuilder(gridSize) {
+// function to build the rows and cells
+function rowAndCellBuilder(gridSize) {
     for(r = 0; r < gridSize; r++) {
         let gridRow = document.createElement("div");
         gridRow.classList.add("row");
