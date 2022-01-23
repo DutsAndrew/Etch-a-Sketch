@@ -65,8 +65,8 @@ newBoard.addEventListener("click", createNewBoard);
 
 // Function that will clear the Etch-a-Sketch board by refreshing the browser.
 function clearIt() {
-    let cells = document.querySelectorAll(".cell");
-    cells.forEach(cell => {
+    let gridCell = document.querySelectorAll(".cell");
+    gridCell.forEach(cell => {
         cell.classList.remove('cell');
     })
 }
