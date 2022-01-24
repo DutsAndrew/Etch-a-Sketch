@@ -1,5 +1,7 @@
 # Etch-a-Sketch
-a functional Etch-a-Sketch that runs in the browser
+A functional Etch-a-Sketch that runs in the browser
+
+~~~~~~My Learning Process~~~~~~
 
 There a quite a few important take-aways and one big success. This was the first project where I was able to get in a flow with JavaScript and just write code and not have to look something up every 5-15 minutes. Everything was making sense and more or less working, and if it wasn't I knew why and could fix it in less than 5 minutes. I'm super happy about that and this project definetely boosted my confidence in JavaScript.
 
